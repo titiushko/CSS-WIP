@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<style>
+			#Form {
+				float: left;
+				position: static;
+			}
+
+			.row {
+				clear: both;
+				/*width: 400px;*/
+				/*height: 25px;*/
+			}
+
+			.row span.label {
+				float: left;
+				font-weight: bold;
+				margin-right: 10px;
+				/*width: 160px;*/
+				margin-top: 2px;
+				text-align: right;
+			}
+
+			.row span.field {
+				float: right;
+				width: 220px;
+				margin-bottom: 5px;
+				text-align: left;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			.viewed {
+				display: inline;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="Form">
+			<div class="row">
+				<span class="label">To:</span>
+				<span class="field">
+					<select name="messageReceiver" title="Message text">
+						<option value="0" onclick="hideClientsList();hideLawFirmsList();">All</option>
+						<option value="1" onclick="hideClientsList();hideLawFirmsList();">All Client Companies</option>
+						<option value="2" onclick="viewClientsList();hideLawFirmsList();">Individual Client Companies</option>
+						<option value="3" onclick="hideLawFirmsList();hideClientsList();">All Law Firms</option>
+						<option value="4" onclick="viewLawFirmsList();hideClientsList();">Individual Law Firms</option>
+					</select>
+				</span>
+			</div>
+			<div id="clientsList" class="row hidden">
+				<span class="label">Client:</span>
+				<span class="field">
+					<select name="messageReceiverClient" title="Message text">
+						<option value="0"></option>
+						<%=Messages.getClientsList(request)%>
+					</select>
+				</span>
+			</div>
+			<div id="lawFirmsList" class="row hidden">
+				<span class="label">Law Firm:</span>
+				<span class="field">
+					<select name="messageReceiverLawFirm" title="Message text">
+						<option value="0"></option>
+						<%=Messages.getLawFirmsList(request)%>
+					</select>
+				</span>
+			</div>
+			<div class="row">
+				<span class="label">Message:</span>
+				<span class="field">
+					<textarea name="messageText" title="Message text" rows="6" cols="30"></textarea>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

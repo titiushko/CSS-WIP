@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Prácticas en Bootstrap</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css" />
+	<style type="text/css">
+		/* smarttv */
+		@media(min-width: 1200px){
+			body{color: red;}
+		}
+		
+		/* smarttv o computadora */
+		@media(max-width: 1199px) and (min-width: 980px){
+			body{color: brown;}
+		}
+		
+		/* computadora pequeña o tablet */
+		@media(max-width: 979px) and (min-width: 768px){
+			body{color: green;}
+		}
+		
+		/* tablet o smartphone */
+		@media(max-width: 767px){
+			body{color: blue;}
+		}
+		
+		/* smartphone */
+		@media(max-width: 480px){
+			body{color: orange;}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- 12.iconos, 13.iconos vectoriales, 14.grupo de botones, 15.listas nav, 16.listas nav verticales, 17.menu navbar, 18.breadcrumb, 19.paginacion, 20.labels y badged, 21. -->
+		<div class="row-fluid">
+			<div class="col-lg-12">&nbsp;</div>
+		</div>
+		<!-- Imagenes -->
+		<div class="row-fluid">
+			<div class="col-lg-3 text-center">
+				<img src="http://placehold.it/100x100&text=Titiushko" alt="Imagen por defecto">
+			</div>
+			<div class="col-lg-3 text-center">
+				<img src="http://placehold.it/100x100&text=Titiushko" alt="Imagen Redondeada" class="img-rounded">
+			</div>
+			<div class="col-lg-3 text-center">
+				<img src="http://placehold.it/100x100&text=Titiushko" alt="Imagen Circulo" class="img-circle">
+			</div>
+			<div class="col-lg-3 text-center">
+				<img src="http://placehold.it/100x100&text=Titiushko" alt="Imagen Polaroid" class="img-thumbnail">
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-12">&nbsp;</div>
+		</div>
+		<!-- Botones -->
+		<div class="row-fluid">
+			<div class="col-lg-6">
+				<button type="button" class="btn btn-default">Por defecto</button>
+				<button type="button" class="btn btn-primary">Primario</button>
+				<button type="button" class="btn btn-success">Éxito</button>
+				<button type="button" class="btn btn-info">Información</button>
+				<button type="button" class="btn btn-warning">Advertencia</button>
+				<button type="button" class="btn btn-danger">Peligro</button>
+				<button type="button" class="btn btn-link">Enlace</button>
+				<hr />
+				<button type="button" class="btn btn-default btn-lg">Por defecto</button>
+				<button type="button" class="btn btn-primary">Primario</button>
+				<button type="button" class="btn btn-success btn-sm">Éxito</button>
+				<button type="button" class="btn btn-info btn-xs">Información</button>
+				<button type="button" class="btn btn-warning btn-sm">Advertencia</button>
+				<button type="button" class="btn btn-danger btn-xs">Peligro</button>
+				<button type="button" class="btn btn-link">Enlace</button>
+			</div>
+			<div class="col-lg-6">
+				<a class="btn btn-default" href="#" role="button">Enlace</a>
+				<button class="btn btn-default" type="submit">Botón</button>
+				<input class="btn btn-default" type="button" value="Input">
+				<input class="btn btn-default" type="submit" value="Submit">
+				<hr />
+				<button type="button" class="btn btn-primary btn-sm active">Botón Primario</button>
+				<button type="button" class="btn btn-default btn-sm active">Botón</button>
+				<a href="#" class="btn btn-primary btn-sm active" role="button">Enlace Primario</a>
+				<a href="#" class="btn btn-default btn-sm active" role="button">Enlace</a>
+				<hr />
+				<button type="button" class="btn btn-sm btn-primary" disabled="disabled">Botón Primario</button>
+				<button type="button" class="btn btn-default btn-sm" disabled="disabled">Botón</button>
+				<a href="#" class="btn btn-primary btn-sm disabled" role="button">Enlace Primario</a>
+				<a href="#" class="btn btn-default btn-sm disabled" role="button">Enlace</a>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-12">&nbsp;</div>
+		</div>
+		<!-- Formularios -->
+		<div class="row-fluid">
+			<div class="col-lg-12">
+				<form class="form-inline" role="form">
+					<legend>Formulario Lineal</legend>
+					<div class="input-prepend">
+					<!-- <div class="input-append"> -->
+						<div class="form-group">
+							<label class="sr-only" for="name">Nombre</label>
+							<input type="text" class="form-control" id="name" placeholder="Nombre">
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<div class="input-group-addon">@</div>
+								<input class="form-control" type="email" placeholder="Correo">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="sr-only" for="password">Contraseña</label>
+							<input type="password" class="form-control" id="password" placeholder="Contraseña">
+						</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Recordarme
+							</label>
+						</div>
+						<button type="submit" class="btn btn-default">Entrar</button>
+						<p class="help-block">Escribir correo electrónico.</p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-6">
+				<form class="form-horizontal" role="form">
+					<legend>Formulario Horizontal</legend>
+					<div class="form-group">
+						<label for="number" class="col-lg-2 control-label">Número</label>
+						<div class="col-lg-10">
+							<input type="number" id="number" placeholder="#" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="email" class="col-lg-2 control-label">Correo</label>
+						<div class="col-lg-10">
+							<input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="password" class="col-lg-2 control-label">Contraseña</label>
+						<div class="col-lg-10">
+							<input type="password" id="password" placeholder="Contraseña" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="name" class="col-lg-2 control-label">Nombre</label>
+						<div class="col-lg-10">
+							<input type="text" id="name" placeholder="Nombre" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-lg-2 control-label">Producto</label>
+						<div class="col-lg-10">
+							<select name="" id="" class="form-control">
+								<option value="0"></option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-offset-2 col-lg-10">
+						<input type="submit" class="btn btn-primary" />
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-6">
+				<form class="form-horizontal" role="form">
+					<legend>Otros Campos</legend>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">@</div>
+							<input class="form-control" type="email" placeholder="XXXXX@XXXXX.XX">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<input class="form-control" type="number" placeholder="#,###,###">
+							<div class="input-group-addon">.00</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							<input class="form-control" type="number" placeholder="#,###,###">
+							<div class="input-group-addon">.00</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<input type="search" class="form-control" placeholder="Buscar">
+							<div class="input-group-btn">
+								<button type="submit" class="btn btn-search">Buscar</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<input class="form-control" type="date">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group has-success has-feedback">
+						<input type="text" class="form-control" id="success">
+						<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-12">&nbsp;</div>
+		</div>
+		<!-- Tablas -->
+		<div class="row-fluid">
+			<div class="col-lg-12">
+				<table class="table table-bordered table-striped table-hover table-condensed">
+					<caption><h2>Usuarios</h2></caption>
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Correo</th>
+							<th>Nombre</th>
+							<th class="hidden-phone">Ciudad</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>bpalacios@bootstrap.com</td>
+							<td>Blanca Palacios</td>
+							<td class="hidden-phone">Mejicanos</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>blankiushka@titiushko.com</td>
+							<td>Blankiushka</td>
+							<td class="hidden-phone">San Salvador</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>tmiguel@bootstrap.com</td>
+							<td>Tito Miguel</td>
+							<td class="hidden-phone">San Marcos</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-12">&nbsp;</div>
+		</div>
+		<!-- Visibilidad en Dispositivos -->
+		<div class="row-fluid">
+			<div class="row-fluid">
+				<div class="col-lg-12">
+					<div class="well visible-desktop">
+						<h1 class="text-center">Visible en Computadora</h1>
+					</div>
+					<div class="well visible-tablet">
+						<h1 class="text-center">Visible en Tablet</h1>
+					</div>
+					<div class="well visible-phone">
+						<h1 class="text-center">Visible en Smartphone</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="row-fluid">
+				<div class="col-lg-12">
+					<div class="well hidden-desktop">
+						<h1 class="text-center">Oculto en Computadora</h1>
+					</div>
+					<div class="well hidden-tablet">
+						<h1 class="text-center">Oculto en Tablet</h1>
+					</div>
+					<div class="well hidden-phone">
+						<h1 class="text-center">Oculto en Smartphone</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Sistema de Grilla -->
+		<div class="row-fluid">
+			<div class="col-lg-6">
+				<div class="row-fluid">
+					<div class="col-lg-6">
+						<div class="well text-center">row-fluid > col-lg-6 > row-fluid > col-lg-6</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="well text-center">row-fluid > col-lg-6 > row-fluid > col-lg-6</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="row-fluid">
+					<div class="col-lg-6">
+						<div class="well text-center">row-fluid > col-lg-6 > row-fluid > col-lg-6</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="well text-center">row-fluid > col-lg-6 > row-fluid > col-lg-6</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-3">
+				<div class="well text-center">row-fluid > col-lg-3</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="well text-center">row-fluid > col-lg-3</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="well text-center">row-fluid > col-lg-3</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="well text-center">row-fluid > col-lg-3</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-6">
+				<div class="well text-center">row-fluid > col-lg-6</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="well text-center">row-fluid > col-lg-6</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

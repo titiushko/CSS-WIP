@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+	<title>pestanas</title>
+	<script src="src/mootools-1.2.2-core-reducido.js" type="text/javascript"></script>
+	<style type="text/css">
+	#pestanas{
+		float:left;
+		width:100%;
+		line-height:normal;
+		font-size: 16px;
+		font-weight: bold;
+		/*pongo un fondo para toda capa donde están las pestañas*/
+		background: transparent url(fondo-pestanas.gif) repeat-x bottom;
+	}
+	#pestanas ul{
+		margin:0;
+		padding:0;
+		list-style:none;
+	}
+	#pestanas li{
+		float:left;
+		margin:0 0 0 3px;
+		padding:0;
+		/*background: #B06630;*/
+		background:url("src/p-der.gif") no-repeat right top;
+	}
+	#pestanas a{
+		display:block;
+		padding:3px 10px 3px 10px;
+		color: #fff;
+		text-decoration: none;
+		/*definimos un padding para los enlaces de las pestañas*/
+		padding-bottom: 2px;
+		background:url("src/p-izq.gif") no-repeat left top;
+	}
+	#pestanas .activa a{
+		background-image:url("src/p-izq-activo.gif");
+		/*colocamos un padding 1 pixel mayor que el padding de los enlaces no activos*/
+		padding-bottom:3px;
+	}
+	#pestanas .activa{
+		/*background: #CCB355;*/
+		background-image:url("src/p-der-activo.gif");
+	}
+	#contenedor_pestanas{
+		background-color: #ccb355;
+		padding: 10px;
+		clear: both;
+		border-left: 1px solid #000;
+		border-right: 1px solid #000;
+		border-bottom: 1px solid #000;
+	}
+	.nover{
+		display: none;
+	}
+	</style>
+	<script>
+	var pestanas = ["pestana1", "pestana2", "pestana3"];
+	var contenedores = ["contenedor1", "contenedor2", "contenedor3"];
+	function cambia_pestana(id){
+		//borro la clase activa de todas las pestañas
+		pestanas.each(function(item){
+			$(item).removeClass("activa");
+		});
+		//coloco la clase activa a la pestaña que se recibe por parámetro
+		$(pestanas[id]).addClass("activa");
+		//oculto el contenido de todos los contenedores asociados a las pestañas
+		contenedores.each(function(miItem){
+			$(miItem).addClass("nover");
+		});
+		//en el contenido que está asociado con la pestaña activa, quito la clase nover
+		$(contenedores[id]).removeClass("nover");
+	}
+	</script>
+	</head>
+	<body>
+		<div id="pestanas">
+			<ul>
+				<li id="pestana1"><a href="javascript: void(0);" onclick="cambia_pestana(0)">DesarrolloWeb.com</a></li>
+				<li id="pestana2" class="activa"><a href="javascript: void(0);" onclick="cambia_pestana(1)">CriarWeb.com</a></li>
+				<li id="pestana3"><a href="javascript: void(0);" onclick="cambia_pestana(2)">Comunidad</a></li>
+			</ul>
+		</div>
+		
+		<div id="contenedor_pestanas">
+			<div id="contenedor1" class="nover">
+				Contenido de la pestaña con título DesarrolloWeb.com
+			</div>
+			<div id="contenedor2">
+				Contenido de la segunda pestaña, que tenía el título CriarWeb.com!
+			</div>
+			<div id="contenedor3" class="nover">
+				Otro contenido de la pestaña<br>En este caso el tercer elemento.
+			</div>
+		</div>
+	</body>
+</html>

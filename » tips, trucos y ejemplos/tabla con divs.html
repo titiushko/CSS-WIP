@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<style>
+			div.tabla {
+				clear: none;
+				overflow: auto;
+			}
+			div.fila {
+				clear: both;
+			}
+			div.col_titulo {
+				float: left;
+				padding: 5px;
+				background: #F0E0A0;
+				border-color: #F0E0A0;
+				border-style: solid;
+				border-right-width: 0px;
+				border-left-width: 0px;
+				border-top-width: 0px;
+				border-bottom-width: 1px;
+			}
+			div.col {
+				float: left;
+				padding: 5px;
+				border-color: #F0E0A0;
+				border-style: solid;
+				border-right-width: 0px;
+				border-left-width: 0px;
+				border-top-width: 0px;
+				border-bottom-width: 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="formulario" method="post">
+			<input name="subir" value="subir" type="button" onclick="document.formulario.campo.disabled=!document.formulario.campo.disabled;">
+			<input name="campo" type="text">
+		</form>
+		<div class="tabla">
+			<div class="fila">
+				<div class="col_titulo" style="width:200px">Programa</div>
+				<div class="col_titulo" style="width:200px">Comentario</div>
+				<div class="col_titulo" style="width:100px">Licencia</div>
+				<div class="col_titulo" style="width:50px">Visitas</div>
+			</div>
+			<div class="fila">
+				<div class="col" style="width:200px">1 BY 1 1.43</div>
+				<div class="col" style="width:200px">Reproductor MP3</div>
+				<div class="col" style="width:100px">freeware</div>
+				<div class="col" style="width:50px">325</div>
+			</div>
+		</div>
+	</body>
+</html>
